@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialPhotos = [
   {
@@ -154,3 +154,19 @@ export default reducer;
 //Redux Thunk sẽ "chặn" action đó lại và đợi cho đến khi một lệnh asynchronous nào đó trong function
 //hoàn tất và trả về kết quả (như giá trị response ở trên).
 //Đến đây chúng ta đã nhận được một PJO và Redux Thunk sẽ cho action này đến Reducer như bình thường.
+
+// createAsyncThunk
+// createAsyncThunk dùng để tương tác ko chỉ với với API, miễn nó là async action là được
+// ví dụ tự xử lý một tác vụ gì đó mà ko gọi API, nhưng cũng cần đợi, thì cũng tính là async action
+
+// còn reducers thì ko định nghĩa đc tên action
+// còn extra reducers thì quyết định đc, nên với async action thì chỉ có thể sử dụng extraReducers hen
+
+// thằng extraReducer có thể nhận một cái action bất kỳ nha, kể cả action đến từ slice khác nè.
+// async action dùng khi mình muốn gọi API để lấy dữ liệu, sau đó cập nhật lại state
+
+// 1. Reducers: Định nghĩa các hàm tính năng: Add, Update, Delete, Filter và Sort.
+// nó tự tạo action với cái name theo quy tắc của nó
+
+// 2. ExtraReducers: Định nghĩa các trạng thái pending, rejected và fulfilled.
+// nó tự tạo action NHƯNG với cái NAME mình đặt (mình cho cái tên action gì là tùy mình)
