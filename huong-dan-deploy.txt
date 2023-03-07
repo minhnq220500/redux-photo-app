@@ -1,0 +1,7 @@
+B1: tạo ra file deploy-surge.sh và setup sẵn trong đó
+B2: mở git bash trong project cần deploy
+B3: nhập lệnh sh ./deploy-surge.sh
+
+mỗi lần thay đổi thì phải build lại
+
+
