@@ -12,4 +12,3 @@ const store=configureStore({
 export default store;
 
 //behind the scene: thì nó sẽ tự set up redux thunk và redux dev tool
-//đã sửa
